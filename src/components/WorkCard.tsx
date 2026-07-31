@@ -10,6 +10,7 @@ export default function WorkCard({ item, compact = false }: { item: WorkItem; co
         <img
           src={item.image}
           alt={item.title}
+          loading="lazy"
           className="size-full object-cover transition-transform duration-300 ease-out group-hover:scale-105"
         />
         {item.inProgress && (

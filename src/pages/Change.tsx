@@ -1,11 +1,11 @@
 import CaseStudyLayout from '../components/CaseStudyLayout'
 import CaseStudySection from '../components/CaseStudySection'
 import glow from '../assets/icons/glow-change.svg'
-import cover from '../assets/images/change-hero.png'
-import imgResearch from '../assets/images/change-research.png'
-import imgDecision1 from '../assets/images/change-decision1.png'
-import imgDecision2 from '../assets/images/change-decision2.png'
-import imgDecision3 from '../assets/images/change-decision3.png'
+import cover from '../assets/images/change-hero.webp'
+import imgResearch from '../assets/images/change-research.webp'
+import imgDecision1 from '../assets/images/change-decision1.webp'
+import imgDecision2 from '../assets/images/change-decision2.webp'
+import imgDecision3 from '../assets/images/change-decision3.webp'
 import { works } from '../data/works'
 
 const data = works.find((w) => w.slug === 'change')!
