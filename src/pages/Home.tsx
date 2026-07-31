@@ -1,3 +1,4 @@
+import { useLayoutEffect, useRef, useState } from 'react'
 import profile from '../assets/images/profile.png'
 import WorkCard from '../components/WorkCard'
 import Contact from '../components/Contact'
@@ -8,10 +9,48 @@ const featuredWorks = works.slice(0, 3)
 // Inmed is kept in the data for a future case study, hidden from the homepage listing for now
 const moreWorks = works.filter((w) => w.slug === 'wineke' || w.slug === 'collective')
 
+const INITIAL_SCALE = 0.85
+
 export default function Home() {
+  const heroRef = useRef<HTMLElement>(null)
+  const [heroHeight, setHeroHeight] = useState(0)
+  const [scale, setScale] = useState(INITIAL_SCALE)
+  const [heroVisible, setHeroVisible] = useState(true)
+
+  useLayoutEffect(() => {
+    const measure = () => setHeroHeight(heroRef.current?.offsetHeight ?? 0)
+    measure()
+    window.addEventListener('resize', measure)
+    return () => window.removeEventListener('resize', measure)
+  }, [])
+
+  useLayoutEffect(() => {
+    if (heroHeight === 0) return
+
+    let raf = 0
+    const onScroll = () => {
+      cancelAnimationFrame(raf)
+      raf = requestAnimationFrame(() => {
+        const progress = Math.min(window.scrollY / heroHeight, 1)
+        setScale(INITIAL_SCALE + (1 - INITIAL_SCALE) * progress)
+        setHeroVisible(progress < 1)
+      })
+    }
+    onScroll()
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => {
+      cancelAnimationFrame(raf)
+      window.removeEventListener('scroll', onScroll)
+    }
+  }, [heroHeight])
+
   return (
-    <div className="flex w-full flex-col items-start bg-bone">
-      <section className={`flex w-full flex-col items-center justify-center bg-white pb-8 pt-16 lg:pb-12 lg:pt-[92px] ${sectionPadding}`}>
+    <div className="relative w-full bg-bone">
+      <section
+        ref={heroRef}
+        className={`fixed inset-x-0 top-0 z-0 flex w-full flex-col items-center justify-center gap-16 bg-white pb-8 pt-16 lg:pb-12 lg:pt-[92px] ${sectionPadding}`}
+        style={{ opacity: heroVisible ? 1 : 0 }}
+      >
         <div className="flex flex-col items-center gap-6">
           <div className="flex flex-wrap items-center justify-center gap-3">
             <span className="font-sans text-[40px] font-bold leading-[1.2] text-black-200 md:text-[56px]">
@@ -31,20 +70,25 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="my-works" className={`flex w-full flex-col items-start gap-8 bg-white pb-16 pt-4 ${sectionPadding}`}>
-        <div className="flex w-full max-w-[1320px] flex-col gap-16 mx-auto">
-          {featuredWorks.map((item) => (
-            <WorkCard key={item.slug} item={item} />
-          ))}
-          <div className="grid w-full grid-cols-1 gap-16 md:grid-cols-2">
-            {moreWorks.map((item) => (
-              <WorkCard key={item.slug} item={item} compact />
+      <div className="relative z-10" style={{ marginTop: heroHeight }}>
+        <section id="my-works" className={`flex w-full flex-col items-start gap-8 pb-16 pt-4 ${sectionPadding}`}>
+          <div
+            className="flex w-full max-w-[1320px] flex-col gap-16 mx-auto bg-white"
+            style={{ transform: `scale(${scale})`, transformOrigin: 'top center' }}
+          >
+            {featuredWorks.map((item) => (
+              <WorkCard key={item.slug} item={item} />
             ))}
+            <div className="grid w-full grid-cols-1 gap-16 md:grid-cols-2">
+              {moreWorks.map((item) => (
+                <WorkCard key={item.slug} item={item} compact />
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <Contact />
+        <Contact />
+      </div>
     </div>
   )
 }
