@@ -35,7 +35,7 @@ export default function Contact({ tone = 'light' }: { tone?: 'light' | 'gray' })
         <h2 className="w-full text-center font-sans text-[40px] font-bold leading-[1.2] text-black-200 md:text-[56px]">
           Let&rsquo;s get in touch
         </h2>
-        <ContactLinks />
+        <ContactLinks visible={visible} />
       </div>
     </section>
   )
