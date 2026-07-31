@@ -30,22 +30,22 @@ export default function Change() {
         images={[imgResearch]}
       />
       <CaseStudySection
-        index="02"
-        total="04"
+        index="01"
+        total="03"
         title="Trust through authenticity"
         body="Stock imagery and generic layouts would have contradicted everything the brand stood for. I briefed and supervised the photoshoot to capture actual people in the actual space, commissioned illustrations from a directed moodboard, and designed value cards from brand research. The intent was that nothing in the visual layer could be reused elsewhere."
         images={[imgDecision1]}
       />
       <CaseStudySection
-        index="03"
-        total="04"
+        index="02"
+        total="03"
         title="Language and structure that sound like the school"
         body={'Research surfaced the language the owner and parents actually used, and "We start with crayons, we end with a certificate" anchored the tone throughout. I curated the FAQ from teachers who are also parents – so the questions are the ones that actually come up. CTAs appear at natural decision points with topic pre-selection, reducing friction at the first step.'}
         images={[imgDecision2]}
       />
       <CaseStudySection
-        index="04"
-        total="04"
+        index="03"
+        total="03"
         title="Making it not all about kids – parent as a beneficiary"
         body="One finding from parent interviews led me to create a section for the parent who brings their child to class and has an hour nearby. Addressing that signals the school has considered the parent's experience alongside the child's – something that rarely appears in how schools present themselves."
         images={[imgDecision3]}

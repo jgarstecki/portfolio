@@ -14,7 +14,7 @@ export default function CaseStudyHero({ eyebrow, heading, meta, glow, cover }: P
       <img
         src={glow}
         alt=""
-        className="pointer-events-none absolute left-1/2 top-[40%] w-[160%] max-w-none -translate-x-1/2"
+        className="pointer-events-none absolute left-1/2 top-full w-[160%] max-w-none -translate-x-1/2 -translate-y-1/2"
       />
       <div className="relative z-10 flex w-full max-w-[880px] flex-col items-center gap-3">
         <p className="w-full text-center text-base text-black-200">{eyebrow}</p>
