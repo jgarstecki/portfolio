@@ -23,7 +23,7 @@ export default function CaseStudyHero({ eyebrow, heading, meta, glow, cover }: P
         </h1>
         <p className="w-full text-center text-base text-black-200">{meta}</p>
       </div>
-      <div className="relative z-10 aspect-[880/473] w-full overflow-hidden rounded-t-corner-m">
+      <div className="relative z-10 aspect-[880/473] w-full overflow-hidden rounded-t-[10px] sm:rounded-t-corner-m">
         <img src={cover} alt="" className="size-full object-cover object-top" />
       </div>
     </div>

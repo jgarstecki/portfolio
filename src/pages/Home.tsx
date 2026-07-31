@@ -56,7 +56,7 @@ export default function Home() {
             <span className="font-sans text-[40px] font-bold leading-[1.2] text-black-200 md:text-[56px]">
               Hello, I&rsquo;m
             </span>
-            <div className="size-16 shrink-0 overflow-hidden rounded-corner-m md:size-[85px]">
+            <div className="size-16 shrink-0 overflow-hidden rounded-[10px] sm:rounded-corner-m md:size-[85px]">
               <img src={profile} alt="Jan Garstecki" className="size-full object-cover" />
             </div>
             <span className="font-sans text-[40px] font-bold leading-[1.2] text-black-200 md:text-[56px]">

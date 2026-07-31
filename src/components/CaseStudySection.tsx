@@ -30,7 +30,7 @@ export default function CaseStudySection({ index, total, label, title, body, ima
         <p className="w-full text-base text-text-secondary">{body}</p>
       </div>
       {images.map((src) => (
-        <div key={src} className="w-full overflow-hidden rounded-corner-m shadow-[0px_1px_18px_0px_rgba(0,0,0,0.09)]">
+        <div key={src} className="w-full overflow-hidden rounded-[10px] shadow-[0px_1px_18px_0px_rgba(0,0,0,0.09)] sm:rounded-corner-m">
           <img src={src} alt="" loading="lazy" className="w-full" />
         </div>
       ))}

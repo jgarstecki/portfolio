@@ -2,7 +2,7 @@ import { IconBrandLinkedin, IconPhone, IconMail } from '@tabler/icons-react'
 
 export default function ContactLinks({ className = '' }: { className?: string }) {
   return (
-    <div className={`flex flex-wrap items-start justify-center gap-6 ${className}`}>
+    <div className={`flex flex-col items-center gap-4 sm:flex-row sm:flex-wrap sm:items-start sm:gap-6 ${className}`}>
       <div className="flex items-center gap-2">
         <IconBrandLinkedin className="size-4" />
         <a
