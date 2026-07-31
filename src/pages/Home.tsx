@@ -13,9 +13,8 @@ const INITIAL_SCALE = 0.85
 
 export default function Home() {
   const heroRef = useRef<HTMLElement>(null)
+  const scaleRef = useRef<HTMLDivElement>(null)
   const [heroHeight, setHeroHeight] = useState(0)
-  const [scale, setScale] = useState(INITIAL_SCALE)
-  const [heroVisible, setHeroVisible] = useState(true)
 
   useLayoutEffect(() => {
     const measure = () => setHeroHeight(heroRef.current?.offsetHeight ?? 0)
@@ -24,6 +23,8 @@ export default function Home() {
     return () => window.removeEventListener('resize', measure)
   }, [])
 
+  // Scale/opacity are driven directly on the DOM (bypassing React state) so
+  // scroll updates don't trigger a re-render of the whole page every frame.
   useLayoutEffect(() => {
     if (heroHeight === 0) return
 
@@ -32,8 +33,12 @@ export default function Home() {
       cancelAnimationFrame(raf)
       raf = requestAnimationFrame(() => {
         const progress = Math.min(window.scrollY / heroHeight, 1)
-        setScale(INITIAL_SCALE + (1 - INITIAL_SCALE) * progress)
-        setHeroVisible(progress < 1)
+        if (scaleRef.current) {
+          scaleRef.current.style.transform = `scale(${INITIAL_SCALE + (1 - INITIAL_SCALE) * progress})`
+        }
+        if (heroRef.current) {
+          heroRef.current.style.opacity = progress < 1 ? '1' : '0'
+        }
       })
     }
     onScroll()
@@ -49,7 +54,6 @@ export default function Home() {
       <section
         ref={heroRef}
         className={`fixed inset-x-0 top-0 z-0 flex w-full flex-col items-center justify-center gap-16 bg-white pb-8 pt-16 lg:pb-12 lg:pt-[92px] ${sectionPadding}`}
-        style={{ opacity: heroVisible ? 1 : 0 }}
       >
         <div className="flex flex-col items-center gap-6">
           <div className="flex flex-wrap items-center justify-center gap-3">
@@ -73,8 +77,9 @@ export default function Home() {
       <div className="relative z-10" style={{ marginTop: heroHeight }}>
         <section id="my-works" className={`flex w-full flex-col items-start gap-8 pb-16 pt-4 ${sectionPadding}`}>
           <div
+            ref={scaleRef}
             className="flex w-full max-w-[1320px] flex-col gap-16 mx-auto bg-white"
-            style={{ transform: `scale(${scale})`, transformOrigin: 'top center' }}
+            style={{ transform: `scale(${INITIAL_SCALE})`, transformOrigin: 'top center', willChange: 'transform' }}
           >
             {featuredWorks.map((item) => (
               <WorkCard key={item.slug} item={item} />
