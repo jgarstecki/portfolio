@@ -2,12 +2,12 @@ import CaseStudyLayout from '../components/CaseStudyLayout'
 import CaseStudySection from '../components/CaseStudySection'
 import { works } from '../data/works'
 import glow from '../assets/icons/glow-orion.svg'
-import cover from '../assets/images/orion-hero.png'
-import img01 from '../assets/images/orion-01.png'
-import img02a from '../assets/images/orion-02a.png'
-import img02b from '../assets/images/orion-02b.png'
-import img03 from '../assets/images/orion-03.png'
-import img04 from '../assets/images/orion-04.png'
+import cover from '../assets/images/orion-hero.webp'
+import img01 from '../assets/images/orion-01.webp'
+import img02a from '../assets/images/orion-02a.webp'
+import img02b from '../assets/images/orion-02b.webp'
+import img03 from '../assets/images/orion-03.webp'
+import img04 from '../assets/images/orion-04.webp'
 
 const data = works.find((w) => w.slug === 'orion')!
 

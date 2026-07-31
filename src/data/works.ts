@@ -1,9 +1,9 @@
-import thumbOrion from '../assets/images/thumb-orion.png'
-import thumbDrifthub from '../assets/images/thumb-drifthub.png'
-import thumbChange from '../assets/images/thumb-change.png'
-import thumbWineke from '../assets/images/thumb-wineke.png'
-import thumbInmed from '../assets/images/thumb-inmed.png'
-import thumbCollective from '../assets/images/thumb-collective.png'
+import thumbOrion from '../assets/images/thumb-orion.webp'
+import thumbDrifthub from '../assets/images/thumb-drifthub.webp'
+import thumbChange from '../assets/images/thumb-change.webp'
+import thumbWineke from '../assets/images/thumb-wineke.webp'
+import thumbInmed from '../assets/images/thumb-inmed.webp'
+import thumbCollective from '../assets/images/thumb-collective.webp'
 
 export type WorkItem = {
   slug: string

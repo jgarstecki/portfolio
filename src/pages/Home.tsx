@@ -45,7 +45,7 @@ export default function Home() {
   }, [heroHeight])
 
   return (
-    <div className="relative w-full bg-bone">
+    <div className="relative w-full bg-white">
       <section
         ref={heroRef}
         className={`fixed inset-x-0 top-0 z-0 flex w-full flex-col items-center justify-center gap-16 bg-white pb-8 pt-16 lg:pb-12 lg:pt-[92px] ${sectionPadding}`}
