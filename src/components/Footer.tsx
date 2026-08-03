@@ -1,4 +1,3 @@
-import { IconCopyright } from '@tabler/icons-react'
 import { sectionPadding } from '../styles/section'
 
 export default function Footer({ tone = 'transparent' }: { tone?: 'transparent' | 'gray' }) {
@@ -7,10 +6,7 @@ export default function Footer({ tone = 'transparent' }: { tone?: 'transparent' 
 
   return (
     <footer className={`w-full py-6 ${bg} ${sectionPadding}`}>
-      <p className={`flex w-full items-center justify-center gap-1.5 text-sm ${text}`}>
-        <IconCopyright className="size-4" />
-        Jan Garstecki {new Date().getFullYear()}
-      </p>
+      <p className={`w-full text-center text-sm ${text}`}>&copy; Jan Garstecki {new Date().getFullYear()}</p>
     </footer>
   )
 }
