@@ -32,7 +32,7 @@ export default function Change() {
       <CaseStudySection
         index="01"
         total="03"
-        title="Nothing borrowed, nothing generic"
+        title="Trust through authenticity"
         body="Stock imagery and generic layouts would have contradicted everything the brand stood for. I briefed and supervised a photoshoot of the actual people and space, commissioned illustrations from a directed moodboard, and designed value cards from brand research – nothing in the visual layer could be reused elsewhere."
         images={[imgDecision1]}
       />
