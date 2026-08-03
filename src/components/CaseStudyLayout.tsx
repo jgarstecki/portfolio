@@ -35,12 +35,14 @@ export default function CaseStudyLayout({
     <div className="flex w-full flex-col items-start bg-white">
       <Nav />
       <CaseStudyHero eyebrow={eyebrow} heading={heading} meta={meta} glow={glow} cover={cover} />
-      <ContextProblem context={context} problem={problem} />
-      {children}
-      <RetroSection body={retro} />
-      <div className="flex w-full flex-col items-start pb-[120px]">
-        <Contact tone="gray" />
-        <OtherWorksSection excludeSlug={slug} />
+      <div className="relative z-10 flex w-full flex-col items-start bg-white">
+        <ContextProblem context={context} problem={problem} />
+        {children}
+        <RetroSection body={retro} />
+        <div className="flex w-full flex-col items-start pb-[120px]">
+          <Contact tone="gray" />
+          <OtherWorksSection excludeSlug={slug} />
+        </div>
       </div>
     </div>
   )
