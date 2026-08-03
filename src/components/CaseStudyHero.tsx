@@ -12,9 +12,9 @@ type Props = {
 const INITIAL_SCALE = 0.85
 const BOTTOM_RADIUS_PX = 8
 // The image scale/corner-radius, the ellipse, and the background crossfade
-// all finish early - they're already done by 50% of the scroll distance.
+// all finish early - they're already done by 30% of the scroll distance.
 // Text keeps the original, slower pacing across the full scroll distance.
-const FADE_SPEEDUP = 0.5
+const FADE_SPEEDUP = 0.3
 const BG_FROM = [235, 235, 235] // gray-200
 const BG_TO = [255, 255, 255] // white
 
