@@ -2,6 +2,7 @@ import { useLayoutEffect, useRef, useState } from 'react'
 import profile from '../assets/images/profile.png'
 import WorkCard from '../components/WorkCard'
 import Contact from '../components/Contact'
+import Footer from '../components/Footer'
 import { works } from '../data/works'
 import { sectionPadding } from '../styles/section'
 
@@ -93,6 +94,7 @@ export default function Home() {
         </section>
 
         <Contact />
+        <Footer />
       </div>
     </div>
   )

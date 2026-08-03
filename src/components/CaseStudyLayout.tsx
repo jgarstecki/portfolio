@@ -5,6 +5,7 @@ import ContextProblem from './ContextProblem'
 import RetroSection from './RetroSection'
 import Contact from './Contact'
 import OtherWorksSection from './OtherWorksSection'
+import Footer from './Footer'
 
 type Props = {
   slug: string
@@ -45,6 +46,7 @@ export default function CaseStudyLayout({
           <Contact tone="gray" />
           <OtherWorksSection excludeSlug={slug} />
         </div>
+        <Footer />
       </div>
     </div>
   )
