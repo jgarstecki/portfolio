@@ -11,9 +11,10 @@ type Props = {
 
 const INITIAL_SCALE = 0.85
 const BOTTOM_RADIUS_PX = 8
-// The ellipse and background crossfade finish 30% quicker than the rest of
-// the reveal, so they're already done by 70% of the scroll distance.
-const FADE_SPEEDUP = 0.7
+// The image scale/corner-radius, the ellipse, and the background crossfade
+// all finish early - they're already done by 50% of the scroll distance.
+// Text keeps the original, slower pacing across the full scroll distance.
+const FADE_SPEEDUP = 0.5
 const BG_FROM = [235, 235, 235] // gray-200
 const BG_TO = [255, 255, 255] // white
 
@@ -57,8 +58,8 @@ export default function CaseStudyHero({ eyebrow, heading, meta, glow, cover }: P
         const progress = Math.min(window.scrollY / heroHeight, 1)
         const fadeProgress = Math.min(progress / FADE_SPEEDUP, 1)
         if (scaleRef.current) {
-          scaleRef.current.style.transform = `scale(${INITIAL_SCALE + (1 - INITIAL_SCALE) * progress})`
-          const radius = `${progress * BOTTOM_RADIUS_PX}px`
+          scaleRef.current.style.transform = `scale(${INITIAL_SCALE + (1 - INITIAL_SCALE) * fadeProgress})`
+          const radius = `${fadeProgress * BOTTOM_RADIUS_PX}px`
           scaleRef.current.style.borderBottomLeftRadius = radius
           scaleRef.current.style.borderBottomRightRadius = radius
         }
