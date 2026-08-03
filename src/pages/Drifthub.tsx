@@ -27,7 +27,7 @@ export default function Drifthub() {
       retro="The visual direction relied on proximity to the owner rather than structured research – worth closing next time. The token system was built reactively, and the naming shows it. Panel navigation assumes users know where their content lives, which remains untested. Joining after the MVP shipped meant the scope of my influence was set before I arrived – worth surfacing explicitly at the start of any similar engagement."
     >
       <div className={`w-full ${sectionPadding}`}>
-        <div className="w-full overflow-hidden rounded-[10px] sm:rounded-corner-m">
+        <div className="w-full overflow-hidden rounded-corner">
           <img src={intro} alt="" className="w-full" />
         </div>
       </div>

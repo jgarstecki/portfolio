@@ -10,7 +10,7 @@ type Props = {
 }
 
 const INITIAL_SCALE = 0.85
-const BOTTOM_RADIUS_PX = 24
+const BOTTOM_RADIUS_PX = 8
 const BG_FROM = [235, 235, 235] // gray-200
 const BG_TO = [255, 255, 255] // white
 
@@ -105,7 +105,7 @@ export default function CaseStudyHero({ eyebrow, heading, meta, glow, cover }: P
       <div className={`relative z-10 w-full ${sectionPadding}`} style={{ marginTop: imageOffset }}>
         <div
           ref={scaleRef}
-          className="aspect-[880/473] w-full overflow-hidden rounded-t-[10px] sm:rounded-t-corner-m"
+          className="aspect-[880/473] w-full overflow-hidden rounded-t-corner"
           style={{ transform: `scale(${INITIAL_SCALE})`, transformOrigin: 'bottom center', willChange: 'transform' }}
         >
           <img src={cover} alt="" className="size-full object-cover object-top" />
