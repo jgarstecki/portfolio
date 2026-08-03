@@ -13,6 +13,7 @@ type Props = {
   meta: string
   glow: string
   cover: string
+  heroShadow?: boolean
   context: string
   problem: string
   retro: string
@@ -26,6 +27,7 @@ export default function CaseStudyLayout({
   meta,
   glow,
   cover,
+  heroShadow,
   context,
   problem,
   retro,
@@ -34,7 +36,7 @@ export default function CaseStudyLayout({
   return (
     <div className="flex w-full flex-col items-start bg-white">
       <Nav />
-      <CaseStudyHero eyebrow={eyebrow} heading={heading} meta={meta} glow={glow} cover={cover} />
+      <CaseStudyHero eyebrow={eyebrow} heading={heading} meta={meta} glow={glow} cover={cover} shadow={heroShadow} />
       <div className="relative z-10 flex w-full flex-col items-start bg-white">
         <ContextProblem context={context} problem={problem} />
         {children}

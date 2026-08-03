@@ -7,10 +7,13 @@ type Props = {
   meta: string
   glow: string
   cover: string
+  shadow?: boolean
 }
 
 const INITIAL_SCALE = 0.85
 const BOTTOM_RADIUS_PX = 8
+// Same shadow as the case-study section images (CaseStudySection.tsx).
+const SHADOW_ALPHA = 0.09
 // The image scale/corner-radius, the ellipse, and the background crossfade
 // all finish early - they're already done by 30% of the scroll distance.
 // Text keeps the original, slower pacing across the full scroll distance.
@@ -23,7 +26,7 @@ function mixBackground(progress: number) {
   return `rgb(${r}, ${g}, ${b})`
 }
 
-export default function CaseStudyHero({ eyebrow, heading, meta, glow, cover }: Props) {
+export default function CaseStudyHero({ eyebrow, heading, meta, glow, cover, shadow }: Props) {
   const heroRef = useRef<HTMLDivElement>(null)
   const spacerRef = useRef<HTMLDivElement>(null)
   const textRef = useRef<HTMLDivElement>(null)
@@ -62,6 +65,9 @@ export default function CaseStudyHero({ eyebrow, heading, meta, glow, cover }: P
           const radius = `${fadeProgress * BOTTOM_RADIUS_PX}px`
           scaleRef.current.style.borderBottomLeftRadius = radius
           scaleRef.current.style.borderBottomRightRadius = radius
+          if (shadow) {
+            scaleRef.current.style.boxShadow = `0px 1px 18px 0px rgba(0,0,0,${SHADOW_ALPHA * fadeProgress})`
+          }
         }
         if (ellipseRef.current) {
           ellipseRef.current.style.opacity = String(1 - fadeProgress)
@@ -81,7 +87,7 @@ export default function CaseStudyHero({ eyebrow, heading, meta, glow, cover }: P
       cancelAnimationFrame(raf)
       window.removeEventListener('scroll', onScroll)
     }
-  }, [heroHeight])
+  }, [heroHeight, shadow])
 
   return (
     <>
