@@ -49,8 +49,8 @@ export default function Orion() {
         index="04"
         total="04"
         wide
-        title="Ownership beyond the assigned scope"
-        body="I extended my involvement into areas the project needed but hadn't formally assigned – thinking about email communication as an extension of the user experience beyond the interface, conducting QA on the live MVP, and selecting and extending the design system. More broadly, the team served as a validator of business ideas, translating the owner's expectations into structured concepts and identifying where they weren't viable before reaching production."
+        title="Work outside the brief"
+        body="I picked up work the project needed but hadn't formally assigned me – email communication as part of the user experience, QA on the live MVP, and extending the design system. The team also stress-tested the owner's ideas before they reached production, flagging the ones that wouldn't hold up."
         images={[img04]}
       />
     </CaseStudyLayout>

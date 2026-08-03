@@ -25,14 +25,14 @@ export default function Change() {
     >
       <CaseStudySection
         label="Research"
-        title="A product that looks like it was made from inside the community"
+        title="Interviewing the owner and the parents"
         body="I structured separate interviews with the owner and seven existing clients to triangulate rather than gather the same picture twice. The affinity framework I designed extracted tone of voice signals, identified the gap between how the school communicates in person and how it appeared online, and served as a retro instrument once the design was done. The central finding: parents described the school in almost the same terms the owner used to build it. Not a positioning problem – a translation one."
         images={[imgResearch]}
       />
       <CaseStudySection
         index="01"
         total="03"
-        title="Trust through authenticity"
+        title="Nothing borrowed, nothing generic"
         body="Stock imagery and generic layouts would have contradicted everything the brand stood for. I briefed and supervised the photoshoot to capture actual people in the actual space, commissioned illustrations from a directed moodboard, and designed value cards from brand research. The intent was that nothing in the visual layer could be reused elsewhere."
         images={[imgDecision1]}
       />
@@ -46,7 +46,7 @@ export default function Change() {
       <CaseStudySection
         index="03"
         total="03"
-        title="Making it not all about kids – parent as a beneficiary"
+        title="The parent gets something too"
         body="One finding from parent interviews led me to create a section for the parent who brings their child to class and has an hour nearby. Addressing that signals the school has considered the parent's experience alongside the child's – something that rarely appears in how schools present themselves."
         images={[imgDecision3]}
       />

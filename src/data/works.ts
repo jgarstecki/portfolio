@@ -18,7 +18,7 @@ export type WorkItem = {
 export const works: WorkItem[] = [
   {
     slug: 'orion',
-    title: 'Navigating various users through tangled enterprise rules',
+    title: 'A CRM for rules no off-the-shelf software could handle',
     subtitle: 'UX/UI · UX Lead · Design System · Enterprise CRM',
     image: thumbOrion,
     href: '/orion',
@@ -39,7 +39,7 @@ export const works: WorkItem[] = [
   },
   {
     slug: 'wineke',
-    title: 'Animating a winemaking platform showcase',
+    title: 'A launch animation for a wine-industry platform',
     subtitle: 'Animation · Motion Design · Branding',
     image: thumbWineke,
     href: 'https://vimeo.com/773735957/6e9f62ef56?fl=pl&fe=sh',
