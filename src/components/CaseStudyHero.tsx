@@ -113,7 +113,10 @@ export default function CaseStudyHero({ eyebrow, heading, meta, glow, cover, sha
         <div ref={spacerRef} className="aspect-[880/473] w-full opacity-0" aria-hidden="true" />
       </div>
 
-      <div className={`relative z-10 w-full ${sectionPadding}`} style={{ marginTop: imageOffset }}>
+      {/* z-[15]: sits above the content section below (z-10) so the hero
+          shadow's blur isn't painted over by it, but stays under the sticky
+          nav (z-20) */}
+      <div className={`relative w-full ${shadow ? 'z-[15]' : 'z-10'} ${sectionPadding}`} style={{ marginTop: imageOffset }}>
         <div
           ref={scaleRef}
           className="aspect-[880/473] w-full overflow-hidden rounded-t-corner"
