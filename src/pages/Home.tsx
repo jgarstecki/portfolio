@@ -94,7 +94,7 @@ export default function Home() {
         </section>
 
         <Contact />
-        <Footer />
+        <Footer tone="gray" />
       </div>
     </div>
   )
