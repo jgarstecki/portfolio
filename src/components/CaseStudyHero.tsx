@@ -10,6 +10,7 @@ type Props = {
 }
 
 const INITIAL_SCALE = 0.85
+const BOTTOM_RADIUS_PX = 24
 const BG_FROM = [235, 235, 235] // gray-200
 const BG_TO = [255, 255, 255] // white
 
@@ -21,6 +22,7 @@ function mixBackground(progress: number) {
 export default function CaseStudyHero({ eyebrow, heading, meta, glow, cover }: Props) {
   const heroRef = useRef<HTMLDivElement>(null)
   const spacerRef = useRef<HTMLDivElement>(null)
+  const textRef = useRef<HTMLDivElement>(null)
   const ellipseRef = useRef<HTMLImageElement>(null)
   const scaleRef = useRef<HTMLDivElement>(null)
   const [heroHeight, setHeroHeight] = useState(0)
@@ -52,9 +54,15 @@ export default function CaseStudyHero({ eyebrow, heading, meta, glow, cover }: P
         const progress = Math.min(window.scrollY / heroHeight, 1)
         if (scaleRef.current) {
           scaleRef.current.style.transform = `scale(${INITIAL_SCALE + (1 - INITIAL_SCALE) * progress})`
+          const radius = `${progress * BOTTOM_RADIUS_PX}px`
+          scaleRef.current.style.borderBottomLeftRadius = radius
+          scaleRef.current.style.borderBottomRightRadius = radius
         }
         if (ellipseRef.current) {
           ellipseRef.current.style.opacity = String(1 - progress)
+        }
+        if (textRef.current) {
+          textRef.current.style.opacity = String(1 - progress)
         }
         if (heroRef.current) {
           heroRef.current.style.backgroundColor = mixBackground(progress)
@@ -74,7 +82,7 @@ export default function CaseStudyHero({ eyebrow, heading, meta, glow, cover }: P
     <>
       <div
         ref={heroRef}
-        className={`fixed inset-x-0 top-0 z-0 flex w-full flex-col items-center justify-end gap-16 overflow-hidden bg-gray-200 pb-0 pt-16 ${sectionPadding}`}
+        className={`fixed inset-x-0 top-16 z-0 flex w-full flex-col items-center justify-end gap-16 overflow-hidden bg-gray-200 pb-0 pt-16 ${sectionPadding}`}
       >
         <img
           ref={ellipseRef}
@@ -82,7 +90,7 @@ export default function CaseStudyHero({ eyebrow, heading, meta, glow, cover }: P
           alt=""
           className="pointer-events-none absolute left-1/2 top-full w-[160%] max-w-none -translate-x-1/2 -translate-y-1/2"
         />
-        <div className="relative z-10 flex w-full max-w-[880px] flex-col items-center gap-3">
+        <div ref={textRef} className="relative z-10 flex w-full max-w-[880px] flex-col items-center gap-3">
           <p className="w-full text-center text-base text-black-200">{eyebrow}</p>
           <h1 className="w-full text-center font-sans text-[28px] leading-[1.2] text-black-200 md:text-[34px]">
             {heading}
@@ -98,7 +106,7 @@ export default function CaseStudyHero({ eyebrow, heading, meta, glow, cover }: P
         <div
           ref={scaleRef}
           className="aspect-[880/473] w-full overflow-hidden rounded-t-[10px] sm:rounded-t-corner-m"
-          style={{ transform: `scale(${INITIAL_SCALE})`, transformOrigin: 'top center', willChange: 'transform' }}
+          style={{ transform: `scale(${INITIAL_SCALE})`, transformOrigin: 'bottom center', willChange: 'transform' }}
         >
           <img src={cover} alt="" className="size-full object-cover object-top" />
         </div>
