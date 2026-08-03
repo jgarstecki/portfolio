@@ -19,7 +19,7 @@ export const works: WorkItem[] = [
   {
     slug: 'orion',
     title: 'A CRM for rules no off-the-shelf software could handle',
-    subtitle: 'UX/UI · UX Lead · Design System · Enterprise CRM',
+    subtitle: 'UX/UI · UX Lead · Design System · School CRM',
     image: thumbOrion,
     href: '/orion',
   },
