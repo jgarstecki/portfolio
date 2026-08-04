@@ -1,14 +1,12 @@
 import CaseStudyLayout from '../components/CaseStudyLayout'
 import CaseStudySection from '../components/CaseStudySection'
 import glow from '../assets/icons/glow-drifthub.svg'
-import cover from '../assets/images/drifthub-hero.webp'
-import intro from '../assets/images/drifthub-intro.webp'
+import cover from '../assets/images/drifthub-intro.webp'
 import img01 from '../assets/images/drifthub-01.webp'
 import img02 from '../assets/images/drifthub-02.webp'
 import img03 from '../assets/images/drifthub-03.webp'
 import img04a from '../assets/images/drifthub-04a.webp'
 import img04b from '../assets/images/drifthub-04b.webp'
-import { sectionPadding } from '../styles/section'
 import { works } from '../data/works'
 
 const data = works.find((w) => w.slug === 'drifthub')!
@@ -26,11 +24,6 @@ export default function Drifthub() {
       problem="The MVP I inherited had the logic in place, but the interface looked like a generic car marketplace – the kind of output AI produces when it draws on convention instead of context. The community it was built for wasn't visible anywhere in it."
       retro="The visual direction relied on proximity to the owner rather than structured research – worth closing next time. The token system was built reactively, and the naming shows it. Panel navigation assumes users know where their content lives, which remains untested. Joining after the MVP shipped meant the scope of my influence was set before I arrived – worth surfacing explicitly at the start of any similar engagement."
     >
-      <div className={`w-full ${sectionPadding}`}>
-        <div className="w-full overflow-hidden rounded-corner">
-          <img src={intro} alt="" className="w-full" />
-        </div>
-      </div>
       <CaseStudySection
         index="01"
         total="04"
