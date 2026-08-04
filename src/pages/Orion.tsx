@@ -30,14 +30,14 @@ export default function Orion() {
         index="01"
         total="04"
         title="One student, multiple simultaneous identities"
-        body="Schools must keep every student record – present, archived, returned – separately, and a student can be active in one school while archived in another within the same network. Browsing any profile, the secretariat needs two things at once: this record's status here, and whether the student is active anywhere else in the network – without extra navigation."
+        body="Schools must keep every student record – present, archived, returned – separately, and a student can be active in one school while archived in another within the same network. Browsing any profile, the school office needs two things at once: this record's status here, and whether the student is active anywhere else in the network – without extra navigation."
         images={[img01]}
       />
       <CaseStudySection
         index="02"
         total="04"
         title="Designing for a multi-user, time-regulated process one role at a time"
-        body="The examination process spans four user types – secretariat, cooperative leaders, parents, examiners – each acting in specific time windows, each step dependent on the last. Part of the work was validating the process itself, catching friction before it reached users. From the parent's side: the declaration flow is multi-step and governed by unconventional rules, so each step shows only what they need at that moment – the interface carries the logic instead of them."
+        body="The examination process spans four user types – school office, cooperative leaders, parents, examiners – each acting in specific time windows, each step dependent on the last. Part of the work was validating the process itself, catching friction before it reached users. From the parent's side: the declaration flow is multi-step and governed by unconventional rules, so each step shows only what they need at that moment – the interface carries the logic instead of them."
         images={[img02a, img02b]}
       />
       <CaseStudySection
