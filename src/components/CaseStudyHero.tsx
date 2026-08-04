@@ -8,6 +8,9 @@ type Props = {
   glow: string
   cover: string
   shadow?: boolean
+  // Defaults to the design's 880:473 crop. Pass the image's native ratio
+  // (e.g. "1760 / 1100") to show it uncropped instead.
+  coverAspect?: string
 }
 
 const INITIAL_SCALE = 0.85
@@ -26,7 +29,7 @@ function mixBackground(progress: number) {
   return `rgb(${r}, ${g}, ${b})`
 }
 
-export default function CaseStudyHero({ eyebrow, heading, meta, glow, cover, shadow }: Props) {
+export default function CaseStudyHero({ eyebrow, heading, meta, glow, cover, shadow, coverAspect = '880 / 473' }: Props) {
   const heroRef = useRef<HTMLDivElement>(null)
   const spacerRef = useRef<HTMLDivElement>(null)
   const textRef = useRef<HTMLDivElement>(null)
@@ -110,7 +113,7 @@ export default function CaseStudyHero({ eyebrow, heading, meta, glow, cover, sha
         </div>
         {/* invisible placeholder matching the cover image's box, so the fixed
             header keeps the same height/rhythm it had when the image lived here */}
-        <div ref={spacerRef} className="aspect-[880/473] w-full opacity-0" aria-hidden="true" />
+        <div ref={spacerRef} className="w-full opacity-0" style={{ aspectRatio: coverAspect }} aria-hidden="true" />
       </div>
 
       {/* z-[15]: sits above the content section below (z-10) so the hero
@@ -119,8 +122,13 @@ export default function CaseStudyHero({ eyebrow, heading, meta, glow, cover, sha
       <div className={`relative w-full ${shadow ? 'z-[15]' : 'z-10'} ${sectionPadding}`} style={{ marginTop: imageOffset }}>
         <div
           ref={scaleRef}
-          className="aspect-[880/473] w-full overflow-hidden rounded-t-corner"
-          style={{ transform: `scale(${INITIAL_SCALE})`, transformOrigin: 'bottom center', willChange: 'transform' }}
+          className="w-full overflow-hidden rounded-t-corner"
+          style={{
+            aspectRatio: coverAspect,
+            transform: `scale(${INITIAL_SCALE})`,
+            transformOrigin: 'bottom center',
+            willChange: 'transform',
+          }}
         >
           <img src={cover} alt="" className="size-full object-cover object-top" />
         </div>

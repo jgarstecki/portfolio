@@ -20,6 +20,7 @@ export default function Drifthub() {
       meta={data.subtitle}
       glow={glow}
       cover={cover}
+      coverAspect="1760 / 1100"
       context="Drift's community operates largely outside dedicated platforms – cars sold through Facebook groups, events announced in scattered posts. DriftHub brings cars, events, tracks, and competition structure into one marketplace. A developer had already built a working MVP with AI-assisted coding; I joined to design on top of that live codebase."
       problem="The MVP I inherited had the logic in place, but the interface looked like a generic car marketplace – the kind of output AI produces when it draws on convention instead of context. The community it was built for wasn't visible anywhere in it."
       retro="The visual direction relied on proximity to the owner rather than structured research – worth closing next time. The token system was built reactively, and the naming shows it. Panel navigation assumes users know where their content lives, which remains untested. Joining after the MVP shipped meant the scope of my influence was set before I arrived – worth surfacing explicitly at the start of any similar engagement."
