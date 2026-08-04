@@ -19,6 +19,7 @@ export default function Change() {
       meta={data.subtitle}
       glow={glow}
       cover={cover}
+      coverAspect="1800 / 1125"
       context="Change is a boutique English academy in Toruń, twenty years of reputation built by word of mouth. New parents came through referrals, so the website's job wasn't to attract – it was to confirm what they'd already heard."
       problem="The school had a genuine identity built over twenty years. The website communicated none of it – it looked like any other language school, working against the trust already earned."
       retro="Starting without a baseline meant no reference point for measuring what changed. A lightweight reception exercise before the redesign would have sharpened the brief and made decisions easier to defend. The affinity framework worked well as a retro instrument after the fact – applying that rigour earlier is what I'd carry forward next time. Some visual decisions were made on instinct where systematic reasoning would have served better."
