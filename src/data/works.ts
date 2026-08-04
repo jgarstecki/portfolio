@@ -39,7 +39,7 @@ export const works: WorkItem[] = [
   },
   {
     slug: 'wineke',
-    title: 'A launch animation for a wine-industry platform',
+    title: 'A launch animation for a wine industry platform',
     subtitle: 'Animation · Motion Design · Branding',
     image: thumbWineke,
     href: 'https://vimeo.com/773735957/6e9f62ef56?fl=pl&fe=sh',
